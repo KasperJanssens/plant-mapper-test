@@ -1,0 +1,19 @@
+OASISFormat:  0.4
+Name:         plant_mapper_test
+Version:      1.0
+Synopsis:     A test project for the plant mapper
+Authors:      Kasper Janssens
+License:      MIT
+Plugins:      META (0.4), DevFiles (0.4)
+BuildTools:   ocamlbuild
+OCamlVersion: >= 4.02
+FilesAB:      lib/META.ab
+
+PreInstallCommand:   $ocamlfind install plant_mapper_test lib/META
+PreUninstallCommand: $ocamlfind remove plant_mapper_test
+
+Executable plant_collector
+  Path:             lib
+  BuildDepends:     batteries
+  MainIs:           plant_mapper_test.ml
+  CompiledObject:   best
